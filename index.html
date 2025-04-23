@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TravelBot - Customer Assistant</title>
+    <style>
+        body { font-family: Arial; background-color: #f4f4f4; padding: 40px; }
+        .chat-box { max-width: 600px; margin: auto; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        input[type=text] { width: 100%; padding: 10px; font-size: 16px; margin-top: 10px; }
+        button { margin-top: 10px; padding: 10px 20px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="chat-box">
+        <h2>TravelBot</h2>
+        <form method="POST">
+            <label>Ask me anything about your travel booking:</label><br>
+            <input type="text" name="user_input" placeholder="e.g. Do you operate 24 hours?" required>
+            <button type="submit">Ask</button>
+        </form>
+        {% if user_input %}
+        <hr>
+        <p><strong>You:</strong> {{ user_input }}</p>
+        <p><strong>Bot:</strong> {{ bot_response }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
